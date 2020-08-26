@@ -8,7 +8,10 @@
  - If `MA5>MA20`,sell the stock
  - At 15:50,sell all the stocks currently hold
  
-
+## How to use
+ - Use cmd to move to the directory futu123
+ - Type the following command in cmd and the program will run automatically to trade and record
+ - python HSI_VirtualAlgoTrade.py
 ## HSI_VirtualAlgoTrade.py
 ````python
 #Check if the HSI directory exist.
