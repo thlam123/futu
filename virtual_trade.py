@@ -9,4 +9,3 @@ def Trade(price,code,trd_side):
 
     print(trd_ctx.place_order(price=price,qty=quantity, code=code, trd_env=TrdEnv.SIMULATE,trd_side=trd_side))
 
-Trade(507.5,'HK.00001',TrdSide.BUY)

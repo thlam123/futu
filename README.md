@@ -209,3 +209,32 @@ while True:
     time.sleep(60)
 ````
 
+## virtual_trade.py
+
+!! The quantity of the stocks could be adjusted !!\
+!! The default is 1 lot                         !!
+
+````python
+from futu import *
+
+trd_ctx = OpenHKTradeContext(host='127.0.0.1', port=11111)
+quote_ctx = OpenQuoteContext(host='127.0.0.1', port=11111)
+
+#Use the "trd_ctx.place_order" function to trade
+
+def Trade(price,code,trd_side):
+
+#Get the lot size(每手) of the stocks we want to trade 
+#If you want to trade more lots at each order, just add a multiplier in front of the quantity (eg:3*quantity)
+
+    ret, data = quote_ctx.get_stock_basicinfo(Market.HK, SecurityType.STOCK,code)
+    quantity=data['lot_size']
+
+    print(trd_ctx.place_order(price=price,qty=quantity, code=code, trd_env=TrdEnv.SIMULATE,trd_side=trd_side))
+````
+
+## Virtual_SellAllStock.py
+
+
+
+
