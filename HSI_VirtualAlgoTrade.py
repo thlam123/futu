@@ -62,6 +62,7 @@ def job():
                          bid_vol, avg_price, amplitude, bid_ask_ratio, volume_ratio])
 
                 df = pd.read_csv(filename, parse_dates=True, index_col='update_time')
+                print(df)
                 price = (df['last_price'])
                 df['MA5'] = price.rolling(window=5).mean()
                 df['MA20'] = price.rolling(window=20).mean()
